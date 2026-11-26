@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="112" fill="#003c78"/>
+<circle cx="256" cy="256" r="178" fill="#fff"/>
+<path d="M160 165h192v58H224v62h112v56H224v66h-64z" fill="#087fc2"/>
+<path d="M256 96v320" stroke="#003c78" stroke-width="14" opacity=".12"/>
+<text x="256" y="390" font-family="Arial,sans-serif" font-size="42" font-weight="700" text-anchor="middle" fill="#003c78">CASH PAM</text>
+</svg>
