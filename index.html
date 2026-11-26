@@ -1,120 +1,271 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CASH PAM SERVICE FINANCIER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASH PAM SERVICE FINANCIER</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #eaf7ff;
-      color: #18364b;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 650px;
-      background: white;
-      padding: 35px 25px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.10);
-    }
-
-    h1 {
-      color: #087db5;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      color: #526b7b;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
-
-    .access-button {
-      display: block;
-      width: 100%;
-      padding: 19px;
-      margin: 15px 0;
-      border-radius: 10px;
-      text-decoration: none;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .client {
-      background: #1688c7;
-    }
-
-    .agent {
-      background: #168b62;
-    }
-
-    .admin {
-      background: #344b65;
-    }
-
-    .access-button:hover {
-      opacity: 0.88;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #718391;
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ color:#12345a;
+ background:#eaf6ff;
+ min-height:100vh;
+}
+header{
+ background:linear-gradient(120deg,#003c78,#087fc2);
+ color:white;
+ padding:18px 20px;
+ display:flex;
+ align-items:center;
+ gap:15px;
+ box-shadow:0 4px 15px #00345a30;
+}
+.logo{
+ width:72px;height:72px;
+ border-radius:50%;
+ object-fit:contain;
+ background:white;
+}
+.brand{flex:1}
+.brand h1{margin:0;font-size:25px}
+.brand p{margin:5px 0 0;font-size:13px}
+.menu-btn{
+ border:0;background:transparent;
+ color:white;font-size:34px;
+ cursor:pointer;
+}
+main{
+ max-width:850px;
+ margin:35px auto;
+ padding:20px;
+}
+.welcome{
+ text-align:center;
+ padding:35px 15px;
+}
+.welcome h2{font-size:36px;margin:0 0 12px}
+.welcome p{font-size:17px;line-height:1.6}
+.card{
+ background:white;
+ border-radius:22px;
+ padding:30px 22px;
+ text-align:center;
+ box-shadow:0 8px 28px #00345a18;
+ margin:20px auto;
+ max-width:580px;
+}
+.icon{
+ width:85px;height:85px;
+ margin:0 auto 18px;
+ border-radius:50%;
+ background:#087fc2;
+ color:white;
+ display:grid;
+ place-items:center;
+ font-size:38px;
+}
+.card h2{font-size:25px}
+.card p{line-height:1.6;color:#526b80}
+.button{
+ display:block;
+ background:linear-gradient(100deg,#087fc2,#0055a5);
+ color:white;
+ text-decoration:none;
+ padding:17px;
+ border-radius:35px;
+ font-weight:bold;
+ margin-top:22px;
+}
+footer{
+ text-align:center;
+ padding:25px 15px;
+ color:#56718a;
+ font-size:13px;
+}
+.overlay{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:#001b35a8;
+ z-index:5;
+}
+.sidebar{
+ position:fixed;
+ top:0;left:-310px;
+ width:290px;height:100%;
+ background:linear-gradient(180deg,#00366e,#00549a);
+ color:white;
+ z-index:10;
+ transition:.3s;
+ padding:20px;
+ box-shadow:5px 0 25px #001b3540;
+}
+.sidebar.open{left:0}
+.overlay.show{display:block}
+.side-head{
+ text-align:center;
+ padding:15px 0 25px;
+ border-bottom:1px solid #ffffff45;
+}
+.side-head img{
+ width:95px;height:95px;
+ border-radius:50%;
+ background:white;
+ object-fit:contain;
+}
+.side-head h2{margin:12px 0 4px}
+.side-head p{margin:0;font-size:13px}
+.side-link{
+ display:block;
+ padding:17px 12px;
+ color:white;
+ text-decoration:none;
+ font-size:16px;
+ font-weight:bold;
+ border-bottom:1px solid #ffffff35;
+ cursor:pointer;
+}
+.side-link:hover{background:#087fc2}
+.close{
+ float:right;
+ color:white;
+ background:none;
+ border:0;
+ font-size:27px;
+ cursor:pointer;
+}
+.page{display:none}
+.page.active{display:block}
+.contact-link{
+ color:#087fc2;
+ font-weight:bold;
+ text-decoration:none;
+}
+.info{line-height:1.8}
+@media(max-width:600px){
+ header{padding:13px}
+ .logo{width:58px;height:58px}
+ .brand h1{font-size:20px}
+ .brand p{font-size:11px}
+ .welcome h2{font-size:30px}
+ main{margin:15px auto}
+}
+</style>
 </head>
 
 <body>
 
-  <main class="container">
+<header>
+ <img class="logo" src="logo.png" alt="Logo CASH PAM">
+ <div class="brand">
+  <h1>CASH PAM</h1>
+  <p>SERVICE FINANCIER</p>
+ </div>
+ <button class="menu-btn" onclick="ouvrirMenu()">☰</button>
+</header>
 
-    <h1>CASH PAM</h1>
+<div class="overlay" id="overlay" onclick="fermerMenu()"></div>
 
-    <h2>SERVICE FINANCIER</h2>
+<nav class="sidebar" id="sidebar">
+ <button class="close" onclick="fermerMenu()">×</button>
 
-    <p class="subtitle">
-      Bienvenue sur la plateforme officielle de CASH PAM.
-      Veuillez sélectionner votre espace d'accès.
-    </p>
+ <div class="side-head">
+  <img src="logo.png" alt="Logo CASH PAM">
+  <h2>CASH PAM</h2>
+  <p>SERVICE FINANCIER</p>
+ </div>
 
-    <a class="access-button client"
-       href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec">
-      ESPACE CLIENT
-    </a>
+ <a class="side-link" onclick="afficherPage('accueil')">⌂ Accueil</a>
+ <a class="side-link" href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=agent">♙ Espace Agent</a>
+ <a class="side-link" href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=admin">♢ Espace Administrateur</a>
+ <a class="side-link" onclick="afficherPage('apropos')">ⓘ À propos</a>
+ <a class="side-link" onclick="afficherPage('contact')">✉ Contactez-nous</a>
+</nav>
 
-    <a class="access-button agent"
-       href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=agent">
-      ESPACE AGENT
-    </a>
+<main>
 
-    <a class="access-button admin"
-       href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=admin">
-      ESPACE ADMINISTRATEUR
-    </a>
+<section id="accueil" class="page active">
+ <div class="welcome">
+  <h2>Bienvenue</h2>
+  <p>sur la plateforme officielle de<br>
+  <strong>CASH PAM SERVICE FINANCIER</strong></p>
+ </div>
 
-    <footer>
-      © CASH PAM SERVICE FINANCIER — Tous droits réservés.
-    </footer>
+ <div class="card">
+  <div class="icon">♙</div>
+  <h2>ESPACE CLIENT</h2>
+  <p>Consultez votre compte et suivez vos opérations en toute sécurité.</p>
+  <a class="button"
+  href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec">
+  ACCÉDER À MON COMPTE　›
+  </a>
+ </div>
+</section>
 
-  </main>
+<section id="apropos" class="page">
+ <div class="card">
+  <h2>À PROPOS DE CASH PAM</h2>
+  <p class="info">
+  CASH PAM SERVICE FINANCIER est une plateforme de services financiers
+  destinée à faciliter le suivi des opérations et la consultation
+  des comptes de ses clients.
+  </p>
+  <p class="info">
+  Notre objectif est de proposer un service accessible,
+  organisé et sécurisé à nos clients.
+  </p>
+ </div>
+</section>
+
+<section id="contact" class="page">
+ <div class="card">
+  <h2>CONTACTEZ-NOUS</h2>
+  <p>Notre équipe est à votre disposition.</p>
+
+  <p class="info">
+  <strong>WhatsApp / Téléphone</strong><br>
+  <a class="contact-link" href="https://wa.me/50948583404">
+  +509 4858 3404
+  </a>
+  </p>
+
+  <p class="info">
+  <strong>Adresse e-mail</strong><br>
+  <a class="contact-link" href="mailto:clientscashpam@gmail.com">
+  clientscashpam@gmail.com
+  </a>
+  </p>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ © CASH PAM SERVICE FINANCIER<br>
+ Tous droits réservés.
+</footer>
+
+<script>
+function ouvrirMenu(){
+ document.getElementById("sidebar").classList.add("open");
+ document.getElementById("overlay").classList.add("show");
+}
+function fermerMenu(){
+ document.getElementById("sidebar").classList.remove("open");
+ document.getElementById("overlay").classList.remove("show");
+}
+function afficherPage(id){
+ document.querySelectorAll(".page").forEach(function(page){
+  page.classList.remove("active");
+ });
+ document.getElementById(id).classList.add("active");
+ fermerMenu();
+ window.scrollTo(0,0);
+}
+</script>
 
 </body>
 </html>
