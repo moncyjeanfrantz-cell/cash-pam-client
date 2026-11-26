@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +16,10 @@
 <link rel="apple-touch-icon" href="cashpam-logo-512.png">
 
 <style>
-*{box-sizing:border-box}
+
+*{
+ box-sizing:border-box;
+}
 
 body{
  margin:0;
@@ -43,7 +47,9 @@ header{
  background:white;
 }
 
-.brand{flex:1}
+.brand{
+ flex:1;
+}
 
 .brand h1{
  margin:0;
@@ -106,7 +112,9 @@ main{
  font-size:38px;
 }
 
-.card h2{font-size:25px}
+.card h2{
+ font-size:25px;
+}
 
 .card p{
  line-height:1.6;
@@ -153,9 +161,13 @@ footer{
  box-shadow:5px 0 25px #001b3540;
 }
 
-.sidebar.open{left:0}
+.sidebar.open{
+ left:0;
+}
 
-.overlay.show{display:block}
+.overlay.show{
+ display:block;
+}
 
 .side-head{
  text-align:center;
@@ -171,7 +183,9 @@ footer{
  object-fit:contain;
 }
 
-.side-head h2{margin:12px 0 4px}
+.side-head h2{
+ margin:12px 0 4px;
+}
 
 .side-head p{
  margin:0;
@@ -189,7 +203,9 @@ footer{
  cursor:pointer;
 }
 
-.side-link:hover{background:#087fc2}
+.side-link:hover{
+ background:#087fc2;
+}
 
 .close{
  float:right;
@@ -200,9 +216,13 @@ footer{
  cursor:pointer;
 }
 
-.page{display:none}
+.page{
+ display:none;
+}
 
-.page.active{display:block}
+.page.active{
+ display:block;
+}
 
 .contact-link{
  color:#087fc2;
@@ -210,79 +230,147 @@ footer{
  text-decoration:none;
 }
 
-.info{line-height:1.8}
+.info{
+ line-height:1.8;
+}
 
 @media(max-width:600px){
 
- header{padding:13px}
+ header{
+  padding:13px;
+ }
 
  .logo{
   width:58px;
   height:58px;
  }
 
- .brand h1{font-size:20px}
+ .brand h1{
+  font-size:20px;
+ }
 
- .brand p{font-size:11px}
+ .brand p{
+  font-size:11px;
+ }
 
- .welcome h2{font-size:30px}
+ .welcome h2{
+  font-size:30px;
+ }
 
- main{margin:15px auto}
+ main{
+  margin:15px auto;
+ }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
 
- <img class="logo" src="cashpam-logo-512.png" alt="Logo CASH PAM">
+ <img
+  class="logo"
+  src="cashpam-logo-512.png"
+  alt="Logo CASH PAM"
+ >
 
  <div class="brand">
+
   <h1>CASH PAM</h1>
+
   <p>SERVICE FINANCIER</p>
+
  </div>
 
- <button class="menu-btn" onclick="ouvrirMenu()" aria-label="Ouvrir le menu">
+ <button
+  class="menu-btn"
+  onclick="ouvrirMenu()"
+  aria-label="Ouvrir le menu"
+ >
+
   ☰
+
  </button>
 
 </header>
 
-<div class="overlay" id="overlay" onclick="fermerMenu()"></div>
+<div
+ class="overlay"
+ id="overlay"
+ onclick="fermerMenu()"
+></div>
 
 <nav class="sidebar" id="sidebar">
 
- <button class="close" onclick="fermerMenu()" aria-label="Fermer le menu">
+ <button
+  class="close"
+  onclick="fermerMenu()"
+  aria-label="Fermer le menu"
+ >
+
   ×
+
  </button>
 
  <div class="side-head">
-  <img src="cashpam-logo-512.png" alt="Logo CASH PAM">
+
+  <img
+   src="cashpam-logo-512.png"
+   alt="Logo CASH PAM"
+  >
+
   <h2>CASH PAM</h2>
+
   <p>SERVICE FINANCIER</p>
+
  </div>
 
- <a class="side-link" onclick="afficherPage('accueil')">
+ <a
+  class="side-link"
+  onclick="afficherPage('accueil')"
+ >
+
   ⌂ Accueil
+
  </a>
 
- <a class="side-link"
- href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=agent">
+ <a
+  class="side-link"
+  href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=agent"
+ >
+
   ♙ Espace Agent
+
  </a>
 
- <a class="side-link"
- href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=admin">
+ <a
+  class="side-link"
+  href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec?page=admin"
+ >
+
   ♢ Espace Administrateur
+
  </a>
 
- <a class="side-link" onclick="afficherPage('apropos')">
+ <a
+  class="side-link"
+  onclick="afficherPage('apropos')"
+ >
+
   ⓘ À propos
+
  </a>
 
- <a class="side-link" onclick="afficherPage('contact')">
+ <a
+  class="side-link"
+  onclick="afficherPage('contact')"
+ >
+
   ✉ Contactez-nous
+
  </a>
 
 </nav>
@@ -298,8 +386,11 @@ footer{
   <h2>Bienvenue</h2>
 
   <p>
+
    sur la plateforme officielle de<br>
+
    <strong>CASH PAM SERVICE FINANCIER</strong>
+
   </p>
 
  </div>
@@ -311,12 +402,16 @@ footer{
   <h2>ESPACE CLIENT</h2>
 
   <p>
+
    Consultez votre compte et suivez vos opérations
    en toute sécurité.
+
   </p>
 
-  <a class="button"
-  href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec">
+  <a
+   class="button"
+   href="https://script.google.com/macros/s/AKfycby-FImwk-Ms1_VVaJz9hMmeJJG4cKqyw620oK27Sd2I6ShDvgw-8bxw3fGxX3YMNXcr/exec"
+  >
 
    ACCÉDER À MON COMPTE　›
 
@@ -368,8 +463,10 @@ footer{
 
    <strong>WhatsApp / Téléphone</strong><br>
 
-   <a class="contact-link"
-   href="https://wa.me/50948583404">
+   <a
+    class="contact-link"
+    href="https://wa.me/50948583404"
+   >
 
     +509 4858 3404
 
@@ -381,8 +478,10 @@ footer{
 
    <strong>Adresse e-mail</strong><br>
 
-   <a class="contact-link"
-   href="mailto:clientscashpam@gmail.com">
+   <a
+    class="contact-link"
+    href="mailto:clientscashpam@gmail.com"
+   >
 
     clientscashpam@gmail.com
 
@@ -399,6 +498,7 @@ footer{
 <footer>
 
  © CASH PAM SERVICE FINANCIER<br>
+
  Tous droits réservés.
 
 </footer>
@@ -407,29 +507,35 @@ footer{
 
 function ouvrirMenu(){
 
- document.getElementById("sidebar").classList.add("open");
+ document.getElementById("sidebar")
+  .classList.add("open");
 
- document.getElementById("overlay").classList.add("show");
+ document.getElementById("overlay")
+  .classList.add("show");
 
 }
 
 function fermerMenu(){
 
- document.getElementById("sidebar").classList.remove("open");
+ document.getElementById("sidebar")
+  .classList.remove("open");
 
- document.getElementById("overlay").classList.remove("show");
+ document.getElementById("overlay")
+  .classList.remove("show");
 
 }
 
 function afficherPage(id){
 
- document.querySelectorAll(".page").forEach(function(page){
+ document.querySelectorAll(".page")
+  .forEach(function(page){
 
-  page.classList.remove("active");
+   page.classList.remove("active");
 
- });
+  });
 
- document.getElementById(id).classList.add("active");
+ document.getElementById(id)
+  .classList.add("active");
 
  fermerMenu();
 
@@ -447,13 +553,18 @@ if("serviceWorker" in navigator){
 
    .then(function(registration){
 
-    console.log("Application CASH PAM prête à être installée.");
+    console.log(
+     "Application CASH PAM prête à être installée."
+    );
 
    })
 
    .catch(function(error){
 
-    console.log("Erreur du service worker :",error);
+    console.log(
+     "Erreur du service worker :",
+     error
+    );
 
    });
 
@@ -464,4 +575,5 @@ if("serviceWorker" in navigator){
 </script>
 
 </body>
+
 </html>
